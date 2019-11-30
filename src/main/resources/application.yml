@@ -1,0 +1,27 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: gateway-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8069/eureka/
+#配置actuator的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: routes
+#zuul:
+#  ratelimit:
+#    enabled: true
+#    repository: REDIS
+#    behind-proxy: true
+#    add-response-headers: true
+#    default-policy-list: #optional - will apply unless specific policy exists
+#      - limit: 5 #optional - request number limit per refresh interval window
+#        quota: 1000 #optional - request time limit per refresh interval window (in seconds)
+#        refresh-interval: 60 #default value (in seconds)
+#        type: #optional
+#          - origin
